@@ -20,11 +20,11 @@ API_URL = "https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4={kode}"
 # Kunci sama dengan kunci di DAERAH.
 DATA_CONTOH = {
     "1": {"suhu": 32, "kondisi": "Hujan Lebat", "kelembapan": 85,
-          "angin": 10, "arah_angin": "Barat", "awan": 90, "jarak_pandang": "8"},
+            "angin": 10, "arah_angin": "Barat", "awan": 90, "jarak_pandang": "8"},
     "2": {"suhu": 30, "kondisi": "Berawan", "kelembapan": 75,
-          "angin": 12, "arah_angin": "Timur", "awan": 60, "jarak_pandang": "10"},
+            "angin": 12, "arah_angin": "Timur", "awan": 60, "jarak_pandang": "10"},
     "3": {"suhu": 34, "kondisi": "Cerah Berawan", "kelembapan": 70,
-          "angin": 8, "arah_angin": "Utara", "awan": 40, "jarak_pandang": "10"},
+            "angin": 8, "arah_angin": "Utara", "awan": 40, "jarak_pandang": "10"},
 }
 
 
@@ -58,7 +58,7 @@ def ambil_cuaca_bmkg(kode_adm4):
         slot = pilih_slot_terdekat(data["data"][0]["cuaca"])
         return {
             "lokasi": f"{lokasi.get('desa', '-')}, {lokasi.get('kecamatan', '-')}, "
-                      f"{lokasi.get('kotkab', '-')}, {lokasi.get('provinsi', '-')}",
+                        f"{lokasi.get('kotkab', '-')}, {lokasi.get('provinsi', '-')}",
             "suhu": slot.get("t"),
             "kondisi": slot.get("weather_desc", "-"),
             "kelembapan": slot.get("hu"),
